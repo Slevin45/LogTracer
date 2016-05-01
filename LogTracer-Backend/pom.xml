@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>LogTracer</groupId>
+    <artifactId>LogTracer</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>LogTracer-model</module>
+        <module>LogTracer-business</module>
+        <module>LogTracer-controller</module>
+        <module>LogTracer-dao</module>
+        <module>LogTracer-dto</module>
+    </modules>
+
+
+    <properties>
+        <jdbc.driver>org.postgresql.Driver</jdbc.driver>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jdbc.databaseurl>jdbc:postgresql:logTracer</jdbc.databaseurl>
+        <jdbc.username>postgres</jdbc.username>
+        <jdbc.password>fotboll1995</jdbc.password>
+        <jdbc.enableLogs>false</jdbc.enableLogs>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.spring.platform</groupId>
+                <artifactId>platform-bom</artifactId>
+                <version>1.1.0.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <version>2.5.1</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

@@ -1,0 +1,36 @@
+drop TABLE IF EXISTS users;
+CREATE TABLE public.users (
+  id SERIAL PRIMARY KEY NOT NULL ,
+  createtimestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+  login CHARACTER(15) NOT NULL,
+  password CHARACTER(40),
+  name CHARACTER(20)
+);
+DROP TABLE IF EXISTS application;
+CREATE TABLE public.application (
+  appid TEXT PRIMARY KEY,
+  name CHARACTER(20),
+  createtimestamp TIMESTAMP WITHOUT TIME ZONE,
+  userid INTEGER,
+  FOREIGN KEY (userid) REFERENCES public.users (id)
+  MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+drop TABLE IF EXISTS logs;
+CREATE TABLE public.logs (
+  id SERIAL PRIMARY KEY NOT NULL,
+  tag CHARACTER(40) NOT NULL,
+  createtimestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+  message CHARACTER(40) NOT NULL,
+  appid TEXT,
+  exception CHARACTER(40),
+  FOREIGN KEY (appid) REFERENCES public.application (appid)
+  MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+drop TABLE IF EXISTS token;
+CREATE TABLE public.token (
+  id SERIAL PRIMARY KEY NOT NULL,
+  userid INTEGER,
+  token TEXT NOT NULL,
+  FOREIGN KEY (userid) REFERENCES public.users (id)
+  MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION
+);

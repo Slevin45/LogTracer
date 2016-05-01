@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LogTracer.iml" filepath="$PROJECT_DIR$/LogTracer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LogTracer-business/LogTracer-business.iml" filepath="$PROJECT_DIR$/LogTracer-business/LogTracer-business.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LogTracer-controller/LogTracer-controller.iml" filepath="$PROJECT_DIR$/LogTracer-controller/LogTracer-controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LogTracer-dao/LogTracer-dao.iml" filepath="$PROJECT_DIR$/LogTracer-dao/LogTracer-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LogTracer-dto/LogTracer-dto.iml" filepath="$PROJECT_DIR$/LogTracer-dto/LogTracer-dto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LogTracer-model/LogTracer-model.iml" filepath="$PROJECT_DIR$/LogTracer-model/LogTracer-model.iml" />
+    </modules>
+  </component>
+</project>
